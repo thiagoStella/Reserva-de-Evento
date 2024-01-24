@@ -1,37 +1,38 @@
 <template>
     <div class="app">
-    <form action="#" method="post">
+    <form action="#" method="post" onsubmit={enviarDados}>
         <div class="slds-form-element">
             <label class="slds-form-element__label" for="campoNome">Nome do Cliente</label>
             <div class="slds-form-element__control">
-                <input type="text" id="campoNome" placeholder="Digite seu nome" class="slds-input" required />
+                <input type="text" id="campoNome"  name="nome" placeholder="Digite seu nome" class="slds-input" required onchange={mudarValor} value={nome}/>
             </div>
-        </div>
+        </div> 
         <div class="slds-form-element">
             <label class="slds-form-element__label" for="campoData">Data do Evento</label>
             <div class="slds-form-element__control">
-                <input type="text" id="campoData" placeholder="Escolha a data do evento" class="slds-input" required />
+                <input type="date" id="campoData" name="data" placeholder="#" class="slds-input"  required onchange={mudarValor} value={data}/>
             </div>
         </div>
         <div class="slds-form-element">
             <label class="slds-form-element__label" for="campoParticipantes">Número de Participantes</label>
             <div class="slds-form-element__control">
-                <input type="text" id="campoParticipantes" placeholder="Quantidade de participantes" class="slds-input" required />
+                <input type="number" id="campoParticipantes" name="participantes" min="1" placeholder="Quantidade de participantes" class="slds-input"  required onchange={mudarValor} value={participantes}/>
             </div>
         </div>
         <div class="slds-form-element">
             <label class="slds-form-element__label" for="campoValor">Valor por Participante</label>
             <div class="slds-form-element__control">
-                <input type="text" id="campoValor" placeholder="Valor do Evento" class="slds-input" required />
+                <input type="nunmber" id="campoValor" name="valor" placeholder="Valor do Evento" class="slds-input"  required onchange={mudarValor} value={valor}/>
             </div>
         </div>
         <div class="slds-form-element">
-            <label class="slds-form-element__label" for="campoValor">Valor Total da Reserva</label>
+            <label class="slds-form-element__label" for="campoTotal">Valor Total da Reserva</label>
             <div class="slds-form-element__control">
-                <input type="text" id="campoTotal" placeholder="Total arrecadado" class="slds-input"  />
+                <input type="text" id="campoTotal" name="total" placeholder="Total arrecadado" class="slds-input" required readonly value={total} />
             </div>
         </div>
         <button class="slds-button slds-button_success btnSalvar">Salvar Reserva</button>
     </form>
     </div>
 </template>
+
