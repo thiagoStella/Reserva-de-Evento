@@ -1,6 +1,8 @@
 .app{
-    background: #d6eeca !important;
+    background: #9edbee !important;
     padding: 4rem;
+    border-radius: 2%;
+    border: 1px solid black;
 }
 
 .btnSalvar{
