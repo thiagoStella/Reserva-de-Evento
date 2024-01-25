@@ -20,13 +20,13 @@ export default class ReservaDeEvento extends LightningElement {
                 break;
             case 'participantes':
                 this.participantes = value;
+                this.total = this.participantes * this.valor
                 break;
             case 'valor':
                 this.valor = value;
+                this.total = 'R$ ' + this.participantes * this.valor
+
                 break;
-            default:
-                this.total = value;
-                break;   
         }
     }
 
@@ -36,7 +36,8 @@ export default class ReservaDeEvento extends LightningElement {
             'NomeDoCliente__c' : this.nome,
             'DataDoEvento__c' : this.data,
             'NumeroDeParticipantes__c' : this.participantes,
-            'ValorPorParticipante__c' : this.valor
+            'ValorPorParticipante__c' : this.valor,
+            'ValorTotalDaReserva__c' : this.total
         }
         inserirReserva({reserva: dados}).then(() => {
             this.limparCampos();
@@ -59,6 +60,6 @@ export default class ReservaDeEvento extends LightningElement {
         this.data = '';
         this.participantes = '';
         this.valor = 0;
-        this.total = 0;
+        this.total = '';
     }
 }

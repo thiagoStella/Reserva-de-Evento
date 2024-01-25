@@ -10,7 +10,7 @@
         <div class="slds-form-element">
             <label class="slds-form-element__label" for="campoData">Data do Evento</label>
             <div class="slds-form-element__control">
-                <input type="date" id="campoData" name="data" placeholder="#" class="slds-input"  required onchange={mudarValor} value={data}/>
+                <input type="date" id="campoData" name="data" placeholder="#" class="slds-input"  required onkeyup={mudarValor} value={data}/>
             </div>
         </div>
         <div class="slds-form-element">
@@ -22,13 +22,13 @@
         <div class="slds-form-element">
             <label class="slds-form-element__label" for="campoValor">Valor por Participante</label>
             <div class="slds-form-element__control">
-                <input type="nunmber" id="campoValor" name="valor" placeholder="Valor do Evento" class="slds-input"  required onchange={mudarValor} value={valor}/>
+                <input type="nunmber" id="campoValor" name="valor" placeholder="Valor do Evento" class="slds-input"  required onkeyup={mudarValor} value={valor}/>
             </div>
         </div>
         <div class="slds-form-element">
             <label class="slds-form-element__label" for="campoTotal">Valor Total da Reserva</label>
             <div class="slds-form-element__control">
-                <input type="text" id="campoTotal" name="total" placeholder="Total arrecadado" class="slds-input" required readonly value={total} />
+                <input type="text" id="campoTotal" name="total" class="slds-input" disabled value={total} />
             </div>
         </div>
         <button class="slds-button slds-button_success btnSalvar">Salvar Reserva</button>
