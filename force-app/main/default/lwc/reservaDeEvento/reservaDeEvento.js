@@ -36,8 +36,7 @@ export default class ReservaDeEvento extends LightningElement {
             'NomeDoCliente__c' : this.nome,
             'DataDoEvento__c' : this.data,
             'NumeroDeParticipantes__c' : this.participantes,
-            'ValorPorParticipante__c' : this.valor,
-            'ValorTotalDaReserva__c' : this.total
+            'ValorPorParticipante__c' : this.valor,            
         }
         inserirReserva({reserva: dados}).then(() => {
             this.limparCampos();
